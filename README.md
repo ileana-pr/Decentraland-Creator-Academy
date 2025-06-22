@@ -1,4 +1,3 @@
----
 
 # 🎉 Decentraland Venue Starter Kit
 
