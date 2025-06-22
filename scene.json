@@ -1,0 +1,50 @@
+{
+  "ecs7": true,
+  "runtimeVersion": "7",
+  "display": {
+    "title": "M1D Components - Starter Scene",
+    "description": "The official showcase and starter scene for the @m1d/dcl-components library. Use this as a foundation for your own venue.",
+    "navmapThumbnail": "images/scene-thumbnail.png",
+    "favicon": "favicon_asset"
+  },
+  "owner": "M1D",
+  "contact": {
+    "name": "M1D",
+    "email": ""
+  },
+  "main": "bin/index.js",
+  "tags": [
+    "m1d",
+    "components",
+    "template",
+    "starter",
+    "venue",
+    "video"
+  ],
+  "scene": {
+    "parcels": [
+      "0,0"
+    ],
+    "base": "0,0"
+  },
+  "spawnPoints": [
+    {
+      "name": "spawn1",
+      "default": true,
+      "position": {
+        "x": 8,
+        "y": 0.5,
+        "z": 2
+      },
+      "cameraTarget": {
+        "x": 8,
+        "y": 4,
+        "z": 8
+      }
+    }
+  ],
+  "featureToggles": {
+    "voiceChat": "enabled",
+    "portableExperiences": "enabled"
+  }
+}
