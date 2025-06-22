@@ -1,5 +1,3 @@
-Here’s a polished version of your Decentraland Venue Starter Kit README with improved clarity, formatting, and structure—while preserving your original intent and technical precision:
-
 ---
 
 # 🎉 Decentraland Venue Starter Kit
