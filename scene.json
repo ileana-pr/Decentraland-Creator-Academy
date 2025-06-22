@@ -32,9 +32,9 @@
       "name": "spawn1",
       "default": true,
       "position": {
-        "x": 8,
-        "y": 0.5,
-        "z": 2
+        "x": 1,
+        "y": 0,
+        "z": 1
       },
       "cameraTarget": {
         "x": 8,

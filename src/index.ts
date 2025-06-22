@@ -38,9 +38,9 @@ export async function main() {
         // position: The location of the screen in the scene. Vector3.create(X, Y, Z).
         // rotation: The orientation of the screen. Quaternion.fromEulerDegrees(X, Y, Z).
         // scale: The size of the screen. Vector3.create(X, Y, Z).
-        position: Vector3.create(8, 0, 8),      // Centered in a 16x16 parcel
+        position: Vector3.create(3.9, 0, 0),      // Centered in a 16x16 parcel
         rotation: Quaternion.fromEulerDegrees(0, 0, 0),
-        scale: Vector3.create(1, 1, 1),
+        scale: Vector3.create(.75, 1, 1),
 
         // This crucial line links the screen to the video guide.
         // It tells the screen to display whatever video the guide is playing.
@@ -56,7 +56,7 @@ export async function main() {
     const danceFloor = engine.addEntity();
     // To use your own model, change the `src` path.
     GltfContainer.create(danceFloor, { src: 'models/DF_WithSpinning_Shuffle_Float2.glb' });
-    Transform.create(danceFloor, { position: Vector3.create(8, 0.325, 8) });
+    Transform.create(danceFloor, { position: Vector3.create(0, 0.325, 0) });
     // This starts the animation loop built into the dance floor model.
     Animator.create(danceFloor, { states: [{ clip: 'Animation', playing: true, loop: true, speed: 0.5 }] });
 
@@ -65,7 +65,10 @@ export async function main() {
     const danceFloorFillerScreen = engine.addEntity();
     MeshRenderer.setBox(danceFloorFillerScreen);
     MeshCollider.setBox(danceFloorFillerScreen); // A collider allows players to walk on it.
-    Transform.create(danceFloorFillerScreen, { position: Vector3.create(8, 0.3, 8), scale: Vector3.create(5.8, 0.05, 8.65) });
+    Transform.create(danceFloorFillerScreen, { 
+        position: Vector3.create(5, 0.3, 8), 
+        scale: Vector3.create(5.8, 0.05, 8.65) 
+    });
 
     // --- Logic for the Color Cycling Effect ---
 
@@ -116,7 +119,7 @@ export async function main() {
     // To use a different ground model, change the `src` path here.
     GltfContainer.create(ground, { src: 'models/ground1Parcel.glb' });
     Transform.create(ground, {
-        position: Vector3.create(8, 0, 8), // Center the ground model in the parcel
+        position: Vector3.create(0, 0, 0), // Center the ground model in the parcel
         rotation: Quaternion.fromEulerDegrees(0, 0, 0),
         scale: Vector3.create(1, 1, 1)
     });
