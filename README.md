@@ -86,5 +86,3 @@ Join the community for help, updates, and creative inspiration:
 Build boldly. Dance freely. Create something unforgettable.  
 
 ---
-
-If you’d like a separate developer-facing version or a one-pager for non-technical stakeholders, I can help with that too.
