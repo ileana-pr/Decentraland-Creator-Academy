@@ -1,3 +1,4 @@
+![Venue Preview](images/scene-thumbnail.png)
 
 # 🎉 Decentraland Venue Starter Kit
 
