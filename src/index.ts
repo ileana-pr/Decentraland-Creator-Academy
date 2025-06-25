@@ -26,10 +26,12 @@ export async function main() {
     // This is the core of the venue's media functionality.
     // =============================================================================
 
-    // Create the Video Guide instance with a single call.
-    // This must be `await`-ed because it fetches the playlist and schedule from a remote URL.
-    // This one line handles the video player, the UI, the scheduler, and all network activity.
-    const videoGuide = await createVideoGuide();
+    // --- Initialize the All-in-One Video Guide Component ---
+    // This single call now handles fetching, fallback, UI, and the scheduler.
+    // The local playlist is defined directly inside the function call for conciseness.
+    const videoGuide = await createVideoGuide({
+        localPlaylist: [{ src: 'https://player.vimeo.com/external/1044149706.m3u8?s=ea55a0d74b486c6ff08fee56df33d82f51314ae7&logging=false' }]
+    });
 
     // Create the physical screen that will display the video.
     // This uses the `createCurvedScreen` component from the library.
