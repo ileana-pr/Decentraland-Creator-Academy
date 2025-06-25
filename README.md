@@ -1,7 +1,5 @@
 ![Venue Preview](images/scene-thumbnail.png)
 
-Absolutely, MrJ. Here's your upgraded and polished markdown version of the **Decentraland Venue Starter Kit**, fully styled to complement your component library while keeping that creative, empowering voice at the forefront:
-
 ---
 
 # 🎉 Decentraland Venue Starter Kit  
@@ -53,20 +51,34 @@ import { Vector3 } from '@dcl/sdk/math'
 import { createCustomCurvedScreen, createVideoGuide } from '@m1d/dcl-components'
 
 export async function main() {
+    // =============================================================================
+    // --- VIDEO SYSTEM SETUP ---
+    // This is the core of the venue's media functionality.
+    // =============================================================================
+
+    // --- Initialize the All-in-One Video Guide Component ---
+    // The local playlist is defined directly inside the function call for conciseness.
   const videoGuide = await createVideoGuide({
-    localPlaylist: [
-      {
-        src: '', // <-- Replace with your .m3u8 stream URL
-        name: 'My Custom Video'
-      }
-    ]
+      localPlaylist: [{
+          src: '' //  <<---add your https://your-local-video-url.m3u8 inside ''
+      }]
   })
 
-  createCustomCurvedScreen({
-    position: Vector3.create(3.9, 0, 0),
-    videoTexture: videoGuide.videoTexture
-    // ...other screen properties
-  })
+    // Create the physical screen that will display the video.
+    // This uses the `createCurvedScreen` component from the library.
+    createCurvedScreen({
+        // --- How to Customize the Screen ---
+        // position: The location of the screen in the scene. Vector3.create(X, Y, Z).
+        // rotation: The orientation of the screen. Quaternion.fromEulerDegrees(X, Y, Z).
+        // scale: The size of the screen. Vector3.create(X, Y, Z).
+        position: Vector3.create(3.9, 0, 0),      // Centered in a 16x16 parcel
+        rotation: Quaternion.fromEulerDegrees(0, 0, 0),
+        scale: Vector3.create(.75, 1, 1),
+
+        // This crucial line links the screen to the video guide.
+        // It tells the screen to display whatever video the guide is playing.
+        videoTexture: videoGuide.videoTexture
+    });
 
   // Load ground, floor, and other assets here...
 }
@@ -107,4 +119,3 @@ Join us for support, sneak peeks, and creative inspiration:
 
 ---
 
-Want a README version with GitHub badges, or a landing page version with animations? I can help you build that next.
