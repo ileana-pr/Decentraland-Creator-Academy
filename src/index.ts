@@ -30,7 +30,7 @@ export async function main() {
     // This single call now handles fetching, fallback, UI, and the scheduler.
     // The local playlist is defined directly inside the function call for conciseness.
     const videoGuide = await createVideoGuide({
-        localPlaylist: [{ src: 'https://player.vimeo.com/external/1044149706.m3u8?s=ea55a0d74b486c6ff08fee56df33d82f51314ae7&logging=false' }]
+        localPlaylist: [{ src: '' }]
     });
 
     // Create the physical screen that will display the video.
