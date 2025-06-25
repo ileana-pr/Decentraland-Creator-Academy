@@ -1,65 +1,74 @@
 ![Venue Preview](images/scene-thumbnail.png)
 
-# 🎉 Decentraland Venue Starter Kit
+Absolutely, MrJ. Here's your upgraded and polished markdown version of the **Decentraland Venue Starter Kit**, fully styled to complement your component library while keeping that creative, empowering voice at the forefront:
 
-Welcome to the **Decentraland Venue Starter Kit** — a plug-and-play scene template designed to jumpstart the creation of your own virtual club, gallery, or event space. Built on **M1D Components**, it delivers powerful features while letting you focus on what matters most: your creativity.
+---
 
-This scene comes pre-configured with a **network-synced video screen** and a **vibrant animated dance floor**, making it the perfect foundation for a polished, functional venue—no need to start from scratch.
+# 🎉 Decentraland Venue Starter Kit  
+_The fastest way to launch your virtual club, gallery, or event space — powered by @m1d/dcl-components._
 
 ---
 
 ## 🧩 Features at a Glance
 
-- **VideoGuide Component**  
-  A fully integrated video system that connects to a shared content network. It includes a user-friendly channel selector UI and supports synchronized playback across scenes using the same component.
+- **🎛 VideoGuide Component**  
+  The scene’s “brain.” Connects to the shared M1D content network and syncs live playback across all visitors. Includes a sleek channel selector UI.
 
-- **CurvedScreen Component**  
-  A procedurally generated curved display optimized for immersive viewing.
+- **📺 Local Content Support**  
+  Showcase your own content by adding a playlist to `index.ts`. A “Venue Content” button appears automatically in the UI for a seamless blend of global and local programming.
 
-- **Animated Dance Floor**  
-  An eye-catching shader-powered floor that cycles through a pastel palette to energize your space.
+- **🌀 Custom Mesh Screen**  
+  A high-performance, procedurally curved mesh screen for vibrant playback and excellent framerate — even under heavy scene load.
 
-- **Single Parcel Layout**  
-  Clean, optimized geometry designed to perfectly fit a 16x16m parcel.
+- **🪩 Animated Dance Floor**  
+  Energize your venue with a custom shader-driven floor that cycles through pastel color palettes.
 
----
-
-## ⚙️ Quick Start Guide
-
-Follow these steps to get up and running in minutes:
-
-1. **Download or Fork** this repository.  
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-3. **Run the scene locally**:
-   ```bash
-   dcl start
-   ```
-
-Boom! You’ll be looking at a fully functional scene with a working video player and UI.
+- **📐 Single Parcel Layout**  
+  Neatly fits a 16×16m plot with optimized geometry and a polished, production-ready feel.
 
 ---
 
-## 🧠 Core Logic – `src/index.ts`
+## ⚙️ Quick Start
 
-The heart of the scene is beautifully simple, powered by two function calls from the `@m1d/dcl-components` library:
+Set up your venue in minutes:
+
+```bash
+# 1. Install dependencies
+npm install
+
+# 2. Launch locally
+dcl start
+```
+
+🚀 You’ll be greeted with a working video screen, UI, and a glowing dance floor.
+
+---
+
+## 🧠 Core Logic (`src/index.ts`)
+
+With the power of `@m1d/dcl-components`, you can launch a fully networked video experience in just two steps:
 
 ```ts
-import { createCurvedScreen, createVideoGuide } from '@m1d/dcl-components';
+import { Vector3 } from '@dcl/sdk/math'
+import { createCustomCurvedScreen, createVideoGuide } from '@m1d/dcl-components'
 
 export async function main() {
-  const videoGuide = await createVideoGuide();
+  const videoGuide = await createVideoGuide({
+    localPlaylist: [
+      {
+        src: '', // <-- Replace with your .m3u8 stream URL
+        name: 'My Custom Video'
+      }
+    ]
+  })
 
-  createCurvedScreen({
-    position: Vector3.create(8, 0, 8),
-    rotation: Quaternion.fromEulerDegrees(0, 0, 0),
-    scale: Vector3.create(1, 1, 1),
+  createCustomCurvedScreen({
+    position: Vector3.create(3.9, 0, 0),
     videoTexture: videoGuide.videoTexture
-  });
+    // ...other screen properties
+  })
 
-  // Additional assets like the ground and dance floor load here...
+  // Load ground, floor, and other assets here...
 }
 ```
 
@@ -67,23 +76,35 @@ export async function main() {
 
 ## ✏️ Customization
 
-Make the scene your own:
+Make the space your own:
 
-- **Swap Models**: Replace `ground1Parcel.glb` or `DF_WithSpinning_Shuffle_Float2.glb` with your own.
-- **Reposition Elements**: Tweak `position`, `rotation`, or `scale` values in `src/index.ts`.
-- **Add Logic & Interactives**: Expand `main()` with your own code, models, or behavior.
+- 🎬 **Add Your Video**  
+  Edit `src/index.ts` and paste your HLS URL (`.m3u8`) into the `localPlaylist`.
 
-This kit gives you the foundation—you bring the vision.
+- 🧱 **Swap 3D Models**  
+  Replace `models/ground1Parcel.glb` or `DF_WithSpinning_Shuffle_Float2.glb` with custom `.glb` assets.
+
+- 🛠 **Reposition Objects**  
+  Adjust `position`, `rotation`, and `scale` of elements directly in `index.ts`.
+
+- 🧠 **Add Interactivity**  
+  Extend `main()` with your logic, triggers, custom UI, or gameplay mechanics.
+
+Your foundation is set. Now it’s time to create your world.
 
 ---
 
 ## 🤝 Support & Community
 
-This starter kit is brought to you by **M1D**, dedicated to empowering Decentraland creators.
+Made with ❤️ by M1D to elevate Decentraland creators.
 
-Join the community for help, updates, and creative inspiration:  
+Join us for support, sneak peeks, and creative inspiration:  
 👉 **[M1D Discord](https://discord.gg/FnVxT8cVd2)**
 
-Build boldly. Dance freely. Create something unforgettable.  
+---
+
+**Build boldly. Dance freely. Create something unforgettable.**
 
 ---
+
+Want a README version with GitHub badges, or a landing page version with animations? I can help you build that next.

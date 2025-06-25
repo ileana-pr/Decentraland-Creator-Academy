@@ -29,9 +29,12 @@ export async function main() {
     // --- Initialize the All-in-One Video Guide Component ---
     // This single call now handles fetching, fallback, UI, and the scheduler.
     // The local playlist is defined directly inside the function call for conciseness.
-    const videoGuide = await createVideoGuide({
-        localPlaylist: [{ src: '' }]
-    });
+  const videoGuide = await createVideoGuide({
+      localPlaylist: [{
+          //add your https://your-local-video-url.m3u8 inside ''
+          src: ''
+      }]
+  })
 
     // Create the physical screen that will display the video.
     // This uses the `createCurvedScreen` component from the library.
