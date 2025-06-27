@@ -25,6 +25,6 @@
     "trailingComma": "none"
   },
   "dependencies": {
-    "@m1d/dcl-components": "^1.1.53"
+    "@m1d/dcl-components": "^1.1.54"
   }
 }
