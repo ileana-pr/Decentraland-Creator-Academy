@@ -12,8 +12,8 @@ _The fastest way to launch your virtual club, gallery, or event space — powere
 - **🎛 VideoGuide Component**  
   The scene’s “brain.” Connects to the shared M1D content network and syncs live playback across all visitors. Includes a sleek channel selector UI.
 
-- **📺 Local Content Support**  
-  Showcase your own content by adding a playlist to `index.ts`. A “Venue Content” button appears automatically in the UI for a seamless blend of global and local programming.
+- **📺 Local Video Support**  
+  Showcase your own video by adding a video URL to `index.ts`. A “Venue Content” button appears automatically in the UI for a seamless blend of global and local programming.
 
 - **🌀 Custom Mesh Screen**  
   A high-performance, procedurally curved mesh screen for vibrant playback and excellent framerate — even under heavy scene load.
@@ -57,12 +57,12 @@ export async function main() {
     // =============================================================================
 
     // --- Initialize the All-in-One Video Guide Component ---
-    // The local playlist is defined directly inside the function call for conciseness.
-  const videoGuide = await createVideoGuide({
-      localPlaylist: [{
-          src: '' //  <<---add your https://your-local-video-url.m3u8 inside ''
-      }]
-  })
+    // The local video is defined directly inside the function call for conciseness.
+    const videoGuide = await createVideoGuide({
+        localVideo: {
+            src: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8' // <<--Replace with your video URL or leave empty ''s for no local video button.
+        }
+    })
 
     // Create the physical screen that will display the video.
     // This uses the `createCurvedScreen` component from the library.
@@ -80,7 +80,7 @@ export async function main() {
         videoTexture: videoGuide.videoTexture
     });
 
-  // Load ground, floor, and other assets here...
+    // Load ground, floor, and other assets here...
 }
 ```
 
@@ -91,7 +91,7 @@ export async function main() {
 Make the space your own:
 
 - 🎬 **Add Your Video**  
-  Edit `src/index.ts` and paste your HLS URL (`.m3u8`) into the `localPlaylist`.
+  Edit `src/index.ts` and paste your HLS URL (`.m3u8`) into the `localVideo` object.
 
 - 🧱 **Swap 3D Models**  
   Replace `models/ground1Parcel.glb` or `DF_WithSpinning_Shuffle_Float2.glb` with custom `.glb` assets.
@@ -118,4 +118,3 @@ Join us for support, sneak peeks, and creative inspiration:
 **Build boldly. Dance freely. Create something unforgettable.**
 
 ---
-

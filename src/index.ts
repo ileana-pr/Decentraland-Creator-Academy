@@ -30,11 +30,10 @@ export async function main() {
     // This single call now handles fetching, fallback, UI, and the scheduler.
     // The local playlist is defined directly inside the function call for conciseness.
   const videoGuide = await createVideoGuide({
-      localPlaylist: [{
-          //add your https://your-local-video-url.m3u8 inside ''
-          src: ''
-      }]
-  })
+    localVideo: {
+      src: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8' // <<--Replace with your video URL or leave empty ''s for no local video button.
+    }
+  });
 
     // Create the physical screen that will display the video.
     // This uses the `createCurvedScreen` component from the library.
