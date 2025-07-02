@@ -26,7 +26,7 @@ export async function main() {
     // This is the core of the venue's media functionality.
     // =============================================================================
 
-    // --- Initialize the All-in-One Video Guide Component ---
+    // --- Initialize the M1D Relay ---
     // This single call now handles fetching, fallback, UI, and the scheduler.
     // The local playlist is defined directly inside the function call for conciseness.
   const videoGuide = await createVideoGuide({
@@ -46,7 +46,7 @@ export async function main() {
         rotation: Quaternion.fromEulerDegrees(0, 0, 0),
         scale: Vector3.create(.75, 1, 1),
 
-        // This crucial line links the screen to the video guide.
+        // This crucial line links the screen to the M1D Relay.
         // It tells the screen to display whatever video the guide is playing.
         videoTexture: videoGuide.videoTexture
     });
