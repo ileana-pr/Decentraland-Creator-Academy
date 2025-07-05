@@ -16,7 +16,7 @@ _The fastest way to launch your virtual club, gallery, or event space — powere
   Showcase your own video by adding a video URL to `index.ts`. A “Venue Content” button appears automatically in the UI for a seamless blend of global and local programming.
 
 - **🌀 Custom Mesh Screen**  
-  A high-performance, procedurally curved mesh screen for vibrant playback and excellent framerate — even under heavy scene load.
+  A curved screen for vibrant playback and excellent framerate.
 
 - **🪩 Animated Dance Floor**  
   Energize your venue with a custom shader-driven floor that cycles through pastel color palettes.
