@@ -31,7 +31,9 @@ export async function main() {
     // The local playlist is defined directly inside the function call for conciseness.
   const videoGuide = await createVideoGuide({
     localVideo: {
-      src: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8' // <<--Replace with your video URL or leave empty ''s for no local video button.
+      id: 'local-video', // Unique identifier for the local video
+      src: 'https://player.vimeo.com/external/902624555.m3u8?s=b2b78debfef94d115dd5c00a76d633e863786372&logging=false',
+      socialsLink: 'https://www.m1d.io', 
     }
   });
 
