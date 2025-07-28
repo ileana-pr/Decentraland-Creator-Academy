@@ -32,7 +32,7 @@ export async function main() {
   const videoGuide = await createVideoGuide({
     localVideo: {
       id: 'local-video', // Unique identifier for the local video
-      src: 'https://player.vimeo.com/external/902624555.m3u8?s=b2b78debfef94d115dd5c00a76d633e863786372&logging=false',
+      src: 'assets/videos/decentraland-optimized.mp4', // Local video file
       socialsLink: 'https://www.m1d.io', 
     }
   });
@@ -51,6 +51,8 @@ export async function main() {
         // This crucial line links the screen to the M1D Relay.
         // It tells the screen to display whatever video the guide is playing.
         videoTexture: videoGuide.videoTexture
+        // Alternative: use a static texture instead of video
+        // texture: 'images/your-image.png' // Uncomment and replace with your image path
     });
 
     // =============================================================================

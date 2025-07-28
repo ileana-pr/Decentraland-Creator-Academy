@@ -2,30 +2,31 @@
   "ecs7": true,
   "runtimeVersion": "7",
   "display": {
-    "title": "M1D Components - Starter Scene",
-    "description": "The official showcase and starter scene for the @m1d/dcl-components library. Use this as a foundation for your own venue.",
+    "title": "CheddarQueso's Land",
+    "description": "Thanks for visiting my land! I'm a new creator and this is my first scene. I'm still learning, so please be patient with me.",
     "navmapThumbnail": "images/scene-thumbnail.png",
     "favicon": "favicon_asset"
   },
-  "owner": "M1D",
+  "owner": "CheddarQueso",
   "contact": {
-    "name": "M1D",
+    "name": "CheddarQueso",
     "email": ""
   },
   "main": "bin/index.js",
   "tags": [
-    "m1d",
-    "components",
-    "template",
-    "starter",
-    "venue",
-    "video"
+    "CheddarQueso",
+    "CheddarQueso's Land",
+    "CheddarQueso's Scene",
+    "CheddarQueso's Video",
+    "CheddarQueso's Video Scene",
+    "CheddarQueso's Video Scene",
+    "CheddarQueso's Video Scene"
   ],
   "scene": {
     "parcels": [
-      "0,0"
+      "-134,-9"
     ],
-    "base": "0,0"
+    "base": "-134,-9"
   },
   "spawnPoints": [
     {
